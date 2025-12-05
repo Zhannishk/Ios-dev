@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         displaySong(song: 0)
-        player?.stop()
     }
     
     let musics = ["Anlasana", "The Last Waltz", "Criminal", "Medieval", "The Less I Know The Better"]
@@ -30,13 +29,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var songArtits: UILabel!
     
+    func playSound(name: String){
+        guard let url = Bundle.main.url(forResource: name, withExtension: "m4a") else {
+            return
+        }
+        player = try? AVAudioPlayer(contentsOf: url)
+        player?.play()
+    }
+    
+    func displaySong(song: Int){
+        songName.text = musics[constant]
+        songArtits.text = artists[constant]
+        songCover.image = UIImage(named: "\(constant+1)")
+        playSound(name: musics[constant])
+    }
+    
     @IBAction func play(_ sender: UIButton) {
         guard let player = player else { return }
 
         if player.isPlaying {
             player.pause()
+//            sender.setImage("play.fill, for: <#T##UIControl.State#>)
         } else {
             player.play()
+//            sender.setTitle("PAUSE", for: .normal)
         }
     }
     
@@ -56,22 +72,17 @@ class ViewController: UIViewController {
         displaySong(song: constant)
     }
     
-    
-    func playSound(name: String){
-        guard let url = Bundle.main.url(forResource: name, withExtension: "m4a") else {
-            return
-        }
-        player = try? AVAudioPlayer(contentsOf: url)
-        player?.play()
-    }
-    
-    func displaySong(song: Int){
-        songName.text = musics[constant]
-        songArtits.text = artists[constant]
-        songCover.image = UIImage(named: "\(constant+1)")
-        playSound(name: musics[constant])
-    }
 
+ 
+    @IBAction func repeatButton(_ sender: Any) {
+
+    }
+    
+    @IBAction func shuffleButton(_ sender: Any) {
+        let randomNumber = Int.random(in: 0..<range)
+        displaySong(song: randomNumber)
+        
+    }
     
     
 }
