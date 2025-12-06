@@ -133,12 +133,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         table.delegate = self
     }
 
-    // Sections Count
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
 
-    // Rows per Section
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return movies.count
@@ -149,7 +149,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
 
-    // MARK: - Cell For Row
+    
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -186,7 +186,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             cell.iconImageView.image = item.image
 
         default:
-            // Empty sections just to avoid crashes
+            
             cell.titleLabel.text = "No Data"
             cell.subtitleLabel.text = ""
             cell.reviewLabel.text = ""
@@ -196,13 +196,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 
-    // MARK: - Section Title
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
 }
 
-// MARK: - Delegate
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath: \(indexPath.section) | \(indexPath.row)")
