@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     let movies: [MovieItem] = [
         MovieItem(title: "Pride and prejudice", subtitle: "2005. Romance/Comedy", review: "Best period drama ever! I can rewatch it right after i have finished it.", image: .pandp),
         MovieItem(title: "The maze runner", subtitle: "2014‧ Sci-fi/Action", review: "I really enjoy films about zomby apocalypse. This one is the best, love all 3 parts!", image: .mazerunner),
-        MovieItem(title: "The Notebook", subtitle: "2004‧ Romance/Comedy", review: "When i watched this film i started questioning myself do i really love anyone? Absolutely recommend!", image: .notebook),
+        MovieItem(title: "The Notebook", subtitle: "2004‧ Romance/Comedy", review: "When i watched this film i started questioning myself do i really love anyone?", image: .notebook),
         MovieItem(title: "The Shawshank Redemption", subtitle: "1994‧ Thriller/Crime", review: "Watched this movie in September, and it is best film in IMBD for a reason. Recommend!", image: .escape),
         MovieItem(title: "F1", subtitle: "2025‧ Sport/Action", review: "Very inspiring to me! ALso i love the soundtrack 'lose my mind' by Hanz Zimmer. ", image: .f1),
     ]
@@ -79,14 +79,15 @@ class ViewController: UIViewController, UITableViewDataSource {
             image: .b3
         ),
         BookItem(
-            title: "Medieval",
-            subtitle: "Historical Fiction",
-            review: "A gripping story set in a medieval world. Great atmosphere and strong characters.",
+            title: "Gambler",
+            subtitle: "Fyodor Dostoevsky • Psychological Drama",
+            review: "A powerful novel about addiction, obsession, and the complexity of human emotions.",
             image: .b4
         ),
+
         BookItem(
-            title: "The Less I Know The Better",
-            subtitle: "Tame Impala Inspired Novel",
+            title: "Gaukar tas",
+            subtitle: "Dulat Isabekov • story",
             review: "A modern, emotional story about love and self-discovery. Very relatable and aesthetic.",
             image: .b5
         )
@@ -201,7 +202,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         return sections[section]
     }
 }
-
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
