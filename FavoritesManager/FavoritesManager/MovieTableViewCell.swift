@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
+class MovieTableViewCell: UITableViewCell {
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -16,7 +16,7 @@ class TableViewCell: UITableViewCell {
     }
     
     func configure(movie: MovieItem) {
-        titleLabel.text = movie.title
+        label.text = movie.title
         iconImageView.image = movie.image
     }
 }

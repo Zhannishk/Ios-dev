@@ -12,8 +12,7 @@ struct BookItem {
     let image: UIImage
 }
 
-class BookViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class BooksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     let book: [BookItem] = [
@@ -51,7 +50,7 @@ class BookViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 }
     
-extension BookViewController {
+extension BooksViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath: \(indexPath.section) | \(indexPath.row)")
     }
@@ -67,5 +66,6 @@ extension BookViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 

@@ -12,48 +12,49 @@ struct MovieItem {
     let image: UIImage
 }
 
-class MoviesViewController: UIViewController {
+class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var tableView: UITableView!
 
     let movies: [MovieItem] = [
-        MovieItem(title: "Pride and prejudice", image: .pandp),
-        MovieItem(title: "The maze runner", image: .mazerunner),
-        MovieItem(title: "The Notebook", image: .notebook),
-        MovieItem(title: "The Shawshank Redemption", image: .escape),
-        MovieItem(title: "F1", image: .f1),
+        MovieItem(title: "Pride and prejudice", image: .m1),
+        MovieItem(title: "The maze runner", image: .m2),
+        MovieItem(title: "The Notebook", image: .m3),
+        MovieItem(title: "The Shawshank Redemption", image: .m4),
+        MovieItem(title: "F1", image: .m5),
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        table.dataSource = self
-        table.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
     }
-}
 
-extension MoviesViewController: UITableViewDataSource {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
-
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movie = movies[indexPath.row]
-        cell.textLabel?.text = movie.title
-        cell.imageView?.image = movie.image
-        return cell
+        let movieCell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieTableViewCell
+        movieCell.label.text = movie.title
+        movieCell.iconImageView.image = movie.image
+        return movieCell
     }
 }
 
-extension MoviesViewController: UITableViewDelegate {
+extension MoviesViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath: \(indexPath.section) | \(indexPath.row)")
     }
 }
 
-    
+
+
     /*
     // MARK: - Navigation
 
