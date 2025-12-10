@@ -1,8 +1,8 @@
 //
-//  TableViewCell.swift
+//  MovieTableViewCell.swift
 //  FavoritesManager
 //
-//  Created by Zhaniya Utemuratova on 06.12.2025.
+//  Created by Zhaniya Utemuratova on 10.12.2025.
 //
 
 import UIKit

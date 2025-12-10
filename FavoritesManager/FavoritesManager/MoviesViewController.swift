@@ -39,7 +39,7 @@ extension MoviesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
         let movie = movies[indexPath.row]
         cell.textLabel?.text = movie.title
         cell.imageView?.image = movie.image
