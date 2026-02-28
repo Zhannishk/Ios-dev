@@ -21,9 +21,10 @@ class BooksViewController: UIViewController, UITableViewDataSource, UITableViewD
         BookItem(title: "Qargyn", image: .b3),
         BookItem(title: "Gambler", image: .b4),
         BookItem(title: "Gaukhar tas", image: .b5),
-//        BookItem(title: "Moonstruck", image: .b6),
-//        BookItem(title: "Gabriella", image: .b7),
-//        BookItem(title: "Miniskirt", image: .b8),
+        BookItem(title: "The notebook", image: .b6),
+        BookItem(title: "1984", image: .b7),
+        BookItem(title: "The anatomy of melancholy", image: .b8),
+        BookItem(title: "Little women", image: .b9)
     ]
     
     override func viewDidLoad() {

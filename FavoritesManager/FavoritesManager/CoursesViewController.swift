@@ -17,11 +17,16 @@ class CoursesViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
 
     let course: [CourseItem] = [
-        CourseItem(title: "Pride and prejudice", image: .m1),
-        CourseItem(title: "The maze runner", image: .m2),
-        CourseItem(title: "The Notebook", image: .m3),
-        CourseItem(title: "The Shawshank Redemption", image: .m4),
-        CourseItem(title: "F1", image: .m5),
+        CourseItem(title: "Ios dev", image: .c1),
+        CourseItem(title: "Alogithm and data structures", image: .c2),
+        CourseItem(title: "Calculus", image: .c3),
+        CourseItem(title: "Physics", image: .c4),
+        CourseItem(title: "History", image: .c5),
+        CourseItem(title: "Linear algebra", image: .c6),
+        CourseItem(title: "Discrete math", image: .c7),
+        CourseItem(title: "Machine learning", image: .c8),
+        CourseItem(title: "Statistics", image: .c9),
+        CourseItem(title: "Web development", image: .c10),
     ]
 
     override func viewDidLoad() {

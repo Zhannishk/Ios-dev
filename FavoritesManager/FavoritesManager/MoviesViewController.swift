@@ -22,6 +22,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         MovieItem(title: "The Notebook", image: .m3),
         MovieItem(title: "The Shawshank Redemption", image: .m4),
         MovieItem(title: "F1", image: .m5),
+        MovieItem(title: "Howl's moving castle", image: .m6),
+        MovieItem(title: "Inception", image: .m7),
+        MovieItem(title: "The wind rises", image: .m8),
+        MovieItem(title: "Me before you", image: .m9),
+        MovieItem(title: "La la land", image: .m10),
     ]
 
     override func viewDidLoad() {
